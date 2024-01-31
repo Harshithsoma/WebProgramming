@@ -1,43 +1,90 @@
+<!DOCTYPE html>
+
 <html>
 
-<head>
-    <title>Number Comparison</title>
-</head>
+    <head>
+        <title>Hello, World</title>
+        <style>
+            div {
+                color: blue;
+            }
+            form {
+                padding: 50px;
+                background-color: aqua;
+            }
+            #area54 {
+                color: green;
+            }
+        </style>
+    </head>
 
-<div>
-    This is before text
-</div>
-    <div id="area54">
+    <body>
 
-    </div>
+
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <ul>
+            <li>CA</li>
+            <li>CB</li>
+            <li>CC</li>
+        </ul>
+    </ul>
+    
+    <div>
+        This is before text
+        <div style="color:red">
+            This is inner text
+        </div>
+        This is after text
+    </div><br/>
+
+    <div id="area54">Test</div>
+
     <form id="numberForm">
-        <input type="number" id="number1" placeholder="Enter first number">
-        <input type="number" id="number2" placeholder="Enter second number">
-        <button id="submit_button" type="submit" style="color:blue">Compare</button>
+        <input type="number" id="number1" placeholder="First number">
+        <input type="number" id="number2" placeholder="Second number">
+        <button id="submit_button" type="submit">Submit</button>
+        
     </form>
 
     <div id="result"></div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('numberForm').addEventListener('submit', function (event) {
-                event.preventDefault();
+        var message = "Page is loading";
+        document.getElementById('result').innerText = message;
+
+        // Waiting for document to load before running script
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Second listener for clicking submit button
+            document.getElementById('numberForm').addEventListener('submit', function(event) {
+                event.preventDefault(); //don't post back to server/reloads
                 var number1 = document.getElementById('number1').value;
                 var number2 = document.getElementById('number2').value;
+
                 if (number1 > number2) {
-                    var message = "First number is greater than second number.";
-                } else if (number1 < number2) {
-                    var message = "First number is less than second number.";
+                    var message = "First number, (" + number1 + 
+                    "), is greater than second number (" + number2 + ").";
+                } else if (number2 > number1) {
+                    var message = "Second number, (" + number2 + 
+                    "), is greater than first number (" + number1 + ").";
                 } else {
-                    var message = "First number is equal to second number.";
-                }
+                    var message = "The numbers are equal.";
+                };
+            
                 document.getElementById('result').innerText = message;
                 document.getElementById('submit_button').disabled = true;
-                document.getElementById('area54').innerHTML = '<form id="numberForm"><input type="number" id="number11" placeholder="Enter first number"><input type="number" id="number12" placeholder="Enter second number"><button id="submit_button" type="submit">Compare</button></form>';
+                document.getElementById('area54').innerHTML = 'You' +
+                    ' have submitted the form.<br/>' +
+                    'I can also put html here.';
             });
+
+            var message = "Page is loaded";
+            document.getElementById('result').innerText = message;
+
         });
     </script>
 
-</body>
-
+    </body>
 </html>
