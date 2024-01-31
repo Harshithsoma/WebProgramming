@@ -64,20 +64,18 @@
                 var number2 = document.getElementById('number2').value;
 
                 if (number1 > number2) {
-                    var message = "First number, (" + number1 + 
-                    "), is greater than second number (" + number2 + ").";
+                    var message = "First number is greater than second number ";
                 } else if (number2 > number1) {
-                    var message = "Second number, (" + number2 + 
-                    "), is greater than first number (" + number1 + ").";
+                    var message = "Second number is greater than first number ";
                 } else {
                     var message = "The numbers are equal.";
                 };
             
                 document.getElementById('result').innerText = message;
-                document.getElementById('submit_button').disabled = true;
-                document.getElementById('area54').innerHTML = 'You' +
-                    ' have submitted the form.<br/>' +
-                    'I can also put html here.';
+                //document.getElementById('submit_button').disabled = true;
+               // document.getElementById('area54').innerHTML =
+                 '<form id="numberForm"><input type="number" id="number1" placeholder="Enter first number"><input type="number" id="number2" placeholder="Enter second number"><button id="submit_button" type="submit">Compare</button></form>';
+                //document.getElementById('area54').innerHTML = '<hr>';
             });
 
             var message = "Page is loaded";
