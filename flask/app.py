@@ -12,7 +12,7 @@ def get_hello():
     me = "Harshith"
     return f"<p>Hello, {me} from the World!</p>"
 
-@app.route("/bye")
+@app.route("/goodbye")
 def get_goodbye():
     me = "Harshith"
     return f"<p>Goodbye, {me} from the World! Come back soon!</p>"
