@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            table{
+                border: 1px solid black;
+                margin:0px;
+                padding:10px
+            }
+            
+        </style>
+   
+    </head>
+
+    <body>
+        <div id="calci">
+        <textarea id="value"></textarea>
+        <table>
+            <tr>
+                <td>
+                    <button id="button7" onclick="myFunction('7')">7</button>
+                </td>
+                <td>
+                    <button id="button8" onclick="myFunction('8')">8</button>
+                </td>
+                <td>
+                    <button id="button9" onclick="myFunction('9')">9</button>
+                </td>
+                <td>
+                    <button id="button*" onclick="myFunction('*')">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="button4" onclick="myFunction('4')">4</button>
+                </td>
+                <td>
+                    <button id="button5" onclick="myFunction('5')">5</button>
+                </td>
+                <td>
+                    <button id="button6" onclick="myFunction('6')">6</button>
+                </td>
+                <td>
+                    <button id="button-" onclick="myFunction('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="button1" onclick="myFunction('1')">1</button> 
+                </td>
+                <td>
+                    <button id="button2" onclick="myFunction('2')">2</button>
+                </td>
+                <td>
+                    <button id="button3" onclick="myFunction('3')">3</button>
+                </td>
+                <td>
+                    <button id="button+" onclick="myFunction('+')">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="button0" onclick="myFunction('0')">0</button>
+                </td>
+                <td>
+                    <button id="cancel" onclick="myOperator('C')">C</button>
+                </td>
+                <td  colspan="2">
+                    <button id="button=" onclick="myOperator('=')">=</button>
+                </td>
+                <!-- <td>
+                    <button id="button/" onclick="myFunction('/')">/</button>
+                </td> -->
+            </tr>
+        </table>
+         <script>
+            textarea = document.getElementById('value');
+            function myFunction(arg){
+                if(arg=='+'||arg=='-'||arg=='*'||arg=='/'){
+                    if(textarea.value.slice(-1)=='+'||textarea.value.slice(-1)=='-'||textarea.value.slice(-1)=='*'||textarea.value.slice(-1)=='/'){
+                        //<!-- do nothing-->
+                }   
+                    else{
+                        textarea.value+=arg;
+                    }
+                }
+                else{
+                textarea.value += arg;
+                }
+            }
+
+            function myOperator(arg){
+                if(arg=='C'){
+                    textarea.value = "";
+                }
+                else if(arg=='='){
+                   var ans = eval(textarea.value);
+                    textarea.value=ans;
+                }
+            }
+         </script>
+    </body>
+</html>
