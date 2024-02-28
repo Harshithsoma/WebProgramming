@@ -23,7 +23,7 @@
         xhr.onreadystatechange = function(event) {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var movies = JSON.parse(xhr.responseText);
-                textarea.value = movies[0]["title"]
+                textarea.value = movies[0]["title"];
             }
             var tableBody = document.getElementById('moviesTable').getElementsByTagName('tbody')[0];        
             movies.forEach(function(movie) {
